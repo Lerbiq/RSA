@@ -1,5 +1,7 @@
 import random
+import re
 
+from unidecode import unidecode
 
 def mod_exp(x, y, p):
     res = 1
@@ -28,7 +30,12 @@ def millerTest(d, n):
 
     return False
 
+
 def isPrime(n, k):
+    if n is None:
+        return False
+    if k is None:
+        raise Exception("The k precision parameter must be an integer. None was provided.")
     if n <= 1 or n == 4:
         return False
     if n <= 3:
@@ -53,3 +60,20 @@ def gcd(a, b):
         a = b
         b = temp % b
     return a
+
+
+def capitalize(match):
+    return match.group().capitalize()
+
+
+def normalize_text(text):
+    text = unidecode(text)
+    return text
+
+
+def is_integer(string):
+    try:
+        int(string)
+        return True
+    except ValueError:
+        return False
