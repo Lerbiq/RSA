@@ -1,21 +1,8 @@
 import random
-import re
 
-from unidecode import unidecode
-
-def mod_exp(x, y, p):
-    res = 1
-    x = x % p
-    while y > 0:
-        if y & 1:
-            res = (res * x) % p
-        y = y >> 1
-        x = (x * x) % p
-    return res
-
-def millerTest(d, n):
+def miller_test(d, n):
     a = 2 + random.randint(1, n - 4)
-    x = mod_exp(a, d, n)
+    x = pow(a, d, n)
 
     if x == 1 or x == n - 1:
         return True
@@ -31,7 +18,7 @@ def millerTest(d, n):
     return False
 
 
-def isPrime(n, k):
+def is_prime(n, k):
     if n is None:
         return False
     if k is None:
@@ -46,7 +33,7 @@ def isPrime(n, k):
         d //= 2
 
     for i in range(k):
-        if not millerTest(d, n):
+        if not miller_test(d, n):
             return False
 
     return True
@@ -64,11 +51,6 @@ def gcd(a, b):
 
 def capitalize(match):
     return match.group().capitalize()
-
-
-def normalize_text(text):
-    text = unidecode(text)
-    return text
 
 
 def is_integer(string):

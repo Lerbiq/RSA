@@ -6,54 +6,62 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>249</width>
-    <height>90</height>
+    <width>293</width>
+    <height>146</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Nastavení klíče</string>
+   <string>Nastavení klíčů</string>
   </property>
-  <widget class="QWidget" name="formLayoutWidget">
+  <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>231</width>
-     <height>31</height>
+     <x>19</x>
+     <y>20</y>
+     <width>251</width>
+     <height>111</height>
     </rect>
    </property>
-   <layout class="QFormLayout" name="formLayout">
-    <item row="0" column="0">
-     <widget class="QLabel" name="labelPrecision">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string>Přesnost:</string>
+       <string>Zadejte číslo - čím vyšší číslo, tím přesnější bude ověření primality čísel klíčů</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QSpinBox" name="spinBoxPrecision">
-      <property name="minimum">
-       <number>6</number>
-      </property>
-      <property name="maximum">
-       <number>999</number>
+    <item>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelPrecision">
+        <property name="text">
+         <string>Přesnost:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSpinBox" name="spinBoxPrecision">
+        <property name="minimum">
+         <number>6</number>
+        </property>
+        <property name="maximum">
+         <number>999</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="buttonGenKey">
+      <property name="text">
+       <string>Generovat</string>
       </property>
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QPushButton" name="buttonGenKey">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>50</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Generovat</string>
-   </property>
   </widget>
  </widget>
  <resources/>

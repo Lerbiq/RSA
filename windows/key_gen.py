@@ -18,6 +18,4 @@ class UiKeyGen(QWidget):
 
     def handle_gen_keys(self):
         self.main_window.gen_keys(self.spinBoxPrecision.value())
-
-
-
+        self.hide()
